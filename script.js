@@ -53,17 +53,30 @@
   var siteNav = document.getElementById("siteNav");
 
   if (menuToggle && siteNav) {
+    var mobileNavQuery = window.matchMedia("(max-width: 768px)");
+    siteNav.setAttribute("aria-hidden", String(mobileNavQuery.matches));
+
+    mobileNavQuery.addEventListener("change", function (event) {
+      if (!event.matches) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        siteNav.classList.remove("is-open");
+      }
+      siteNav.setAttribute("aria-hidden", String(event.matches && !siteNav.classList.contains("is-open")));
+    });
+
     menuToggle.addEventListener("click", function (event) {
       event.stopPropagation();
       var isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", String(!isExpanded));
       siteNav.classList.toggle("is-open", !isExpanded);
+      siteNav.setAttribute("aria-hidden", String(isExpanded));
     });
 
     siteNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         menuToggle.setAttribute("aria-expanded", "false");
         siteNav.classList.remove("is-open");
+        siteNav.setAttribute("aria-hidden", "true");
       });
     });
 
@@ -72,6 +85,7 @@
       if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
         menuToggle.setAttribute("aria-expanded", "false");
         siteNav.classList.remove("is-open");
+        siteNav.setAttribute("aria-hidden", "true");
       }
     });
   }
@@ -320,8 +334,15 @@
 
   function setFieldError(fieldName, message) {
     var errorElement = document.querySelector("[data-error-for='" + fieldName + "']");
+    var field = document.getElementById(fieldName);
     if (errorElement) {
       errorElement.textContent = message;
+    }
+    if (field) {
+      field.setAttribute("aria-invalid", message ? "true" : "false");
+      if (message && errorElement && errorElement.id) {
+        field.setAttribute("aria-describedby", errorElement.id);
+      }
     }
   }
 
@@ -329,6 +350,10 @@
     var errorElements = document.querySelectorAll(".field-error");
     errorElements.forEach(function (element) {
       element.textContent = "";
+    });
+    document.querySelectorAll("[aria-invalid='true']").forEach(function (field) {
+      field.setAttribute("aria-invalid", "false");
+      field.removeAttribute("aria-describedby");
     });
   }
 
@@ -375,17 +400,22 @@
   function validateStep(step) {
     clearFieldErrors();
     var isValid = true;
+    var firstInvalidField = null;
+
+    function invalidate(fieldName, message) {
+      setFieldError(fieldName, message);
+      if (!firstInvalidField) firstInvalidField = document.getElementById(fieldName);
+      isValid = false;
+    }
 
     if (step === 1) {
       var fullName = getFieldValue("fullName");
       var phone = getFieldValue("phone");
       if (!fullName) {
-        setFieldError("fullName", "Please enter your full name.");
-        isValid = false;
+        invalidate("fullName", "Please enter your full name.");
       }
       if (!phone) {
-        setFieldError("phone", "Please enter your phone number.");
-        isValid = false;
+        invalidate("phone", "Please enter your phone number.");
       }
     }
 
@@ -397,36 +427,35 @@
       var appointmentLocation = getFieldValue("appointmentLocation");
 
       if (!service) {
-        setFieldError("service", "Please select a service.");
-        isValid = false;
+        invalidate("service", "Please select a service.");
       }
 
       if (!appointmentDate) {
-        setFieldError("appointmentDate", "Please select an appointment date.");
-        isValid = false;
+        invalidate("appointmentDate", "Please select an appointment date.");
       } else {
         var selectedDate = new Date(appointmentDate + "T00:00:00");
         var today = new Date(new Date().toDateString());
         if (selectedDate < today) {
-          setFieldError("appointmentDate", "Please choose a future or current date.");
-          isValid = false;
+          invalidate("appointmentDate", "Please choose a future or current date.");
         }
       }
 
       if (!appointmentType) {
-        setFieldError("appointmentType", "Please select an appointment type.");
-        isValid = false;
+        invalidate("appointmentType", "Please select an appointment type.");
       }
 
       if (!appointmentTime) {
-        setFieldError("appointmentTime", "Please select a preferred time.");
-        isValid = false;
+        invalidate("appointmentTime", "Please select a preferred time.");
       }
 
       if (!isShopAppointment() && !appointmentLocation) {
-        setFieldError("appointmentLocation", "Please enter the appointment location.");
-        isValid = false;
+        invalidate("appointmentLocation", "Please enter the appointment location.");
       }
+    }
+
+    if (!isValid && firstInvalidField) {
+      firstInvalidField.focus({ preventScroll: true });
+      firstInvalidField.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
     }
 
     return isValid;

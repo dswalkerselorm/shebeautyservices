@@ -79,11 +79,11 @@
                 <p class="form-step-intro">Start with the best way to reach you.</p>
                 <label for="fullName">Full Name</label>
                 <input id="fullName" name="fullName" type="text" autocomplete="name" required>
-                <p class="field-error" data-error-for="fullName"></p>
+                <p class="field-error" id="fullNameError" data-error-for="fullName"></p>
 
                 <label for="phone">Phone Number</label>
                 <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-                <p class="field-error" data-error-for="phone"></p>
+                <p class="field-error" id="phoneError" data-error-for="phone"></p>
               </section>
 
               <section class="form-step" data-step="2">
@@ -96,15 +96,15 @@
                   <option>Lashes</option>
                   <option>Makeup</option>
                 </select>
-                <p class="field-error" data-error-for="service"></p>
+                <p class="field-error" id="serviceError" data-error-for="service"></p>
 
                 <label for="appointmentDate">Appointment Date</label>
                 <input id="appointmentDate" name="appointmentDate" type="date" required>
-                <p class="field-error" data-error-for="appointmentDate"></p>
+                <p class="field-error" id="appointmentDateError" data-error-for="appointmentDate"></p>
 
                 <label for="appointmentTime">Preferred Time</label>
                 <input id="appointmentTime" name="appointmentTime" type="time" required>
-                <p class="field-error" data-error-for="appointmentTime"></p>
+                <p class="field-error" id="appointmentTimeError" data-error-for="appointmentTime"></p>
 
                 <label for="appointmentType">Appointment Type</label>
                 <select id="appointmentType" name="appointmentType" required>
@@ -113,13 +113,13 @@
                   <option>Home Service</option>
                   <option>Travel</option>
                 </select>
-                <p class="field-error" data-error-for="appointmentType"></p>
+                <p class="field-error" id="appointmentTypeError" data-error-for="appointmentType"></p>
                 <p class="appointment-type-note" id="appointmentTypeNote" aria-live="polite">Choose the setting that works best for you.</p>
 
                 <div id="appointmentLocationGroup">
                   <label for="appointmentLocation">Appointment Location</label>
                   <textarea id="appointmentLocation" name="appointmentLocation" rows="3" required placeholder="Enter your address or preferred meeting location"></textarea>
-                  <p class="field-error" data-error-for="appointmentLocation"></p>
+                  <p class="field-error" id="appointmentLocationError" data-error-for="appointmentLocation"></p>
                 </div>
               </section>
 

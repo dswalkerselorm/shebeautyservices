@@ -77,6 +77,11 @@ a {
   transition: var(--transition-fast);
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 4px;
+}
+
 button, input, select, textarea {
   font: inherit;
   color: inherit;
@@ -1259,6 +1264,13 @@ select option {
   min-height: 1.2em;
 }
 
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #d95f5f;
+  box-shadow: 0 0 0 2px rgba(217, 95, 95, 0.14);
+}
+
 .field-note {
   font-size: 0.8rem;
   color: var(--text-dim);
@@ -1593,6 +1605,10 @@ select option {
 
   .nav-links.is-open {
     display: flex;
+  }
+
+  .nav-links.is-open a:focus-visible {
+    outline-offset: 6px;
   }
 
   .home-service-grid,
