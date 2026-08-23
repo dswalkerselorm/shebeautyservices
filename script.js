@@ -295,6 +295,7 @@
   var appointmentTypeField = document.getElementById("appointmentType");
   var appointmentLocationField = document.getElementById("appointmentLocation");
   var appointmentLocationGroup = document.getElementById("appointmentLocationGroup");
+  var appointmentTypeNote = document.getElementById("appointmentTypeNote");
   var formMessage = document.getElementById("formMessage");
   var successCard = document.getElementById("successCard");
   var successMessage = document.getElementById("successMessage");
@@ -345,9 +346,25 @@
     if (!appointmentLocationField || !appointmentLocationGroup) return;
 
     var shopAppointment = isShopAppointment();
+    var appointmentType = getFieldValue("appointmentType");
     appointmentLocationGroup.hidden = shopAppointment;
     appointmentLocationField.required = !shopAppointment;
     appointmentLocationField.disabled = shopAppointment;
+
+    if (appointmentTypeNote) {
+      var guidance = {
+        "Shop Appointment": "Visit us at the studio for your appointment.",
+        "Home Service": "We will come to your preferred address.",
+        "Travel": "Tell us where you would like us to meet you."
+      };
+      appointmentTypeNote.textContent = guidance[appointmentType] || "Choose the setting that works best for you.";
+    }
+
+    if (appointmentLocationField) {
+      appointmentLocationField.placeholder = appointmentType === "Travel"
+        ? "Enter your preferred meeting location"
+        : "Enter your service address";
+    }
 
     if (shopAppointment) {
       appointmentLocationField.value = "";

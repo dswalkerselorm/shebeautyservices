@@ -1265,6 +1265,14 @@ select option {
   margin-top: 0.3rem;
 }
 
+.appointment-type-note {
+  margin-top: -0.55rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
 .wizard-actions {
   display: flex;
   gap: 1rem;
