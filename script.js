@@ -88,6 +88,14 @@
         siteNav.setAttribute("aria-hidden", "true");
       }
     });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape" || !siteNav.classList.contains("is-open")) return;
+      menuToggle.setAttribute("aria-expanded", "false");
+      siteNav.classList.remove("is-open");
+      siteNav.setAttribute("aria-hidden", "true");
+      menuToggle.focus();
+    });
   }
 
   // ── Scroll Reveal ──
@@ -416,6 +424,8 @@
       }
       if (!phone) {
         invalidate("phone", "Please enter your phone number.");
+      } else if (phone.replace(/\D/g, "").length < 7) {
+        invalidate("phone", "Please enter a valid phone number.");
       }
     }
 
@@ -490,11 +500,17 @@
     formSteps.forEach(function (stepEl) {
       var stepNumber = Number(stepEl.getAttribute("data-step"));
       stepEl.classList.toggle("is-current", stepNumber === currentStep);
+      stepEl.setAttribute("aria-hidden", String(stepNumber !== currentStep));
     });
 
     stepIndicators.forEach(function (indicator) {
       var stepNumber = Number(indicator.getAttribute("data-step-indicator"));
       indicator.classList.toggle("is-current", stepNumber === currentStep);
+      if (stepNumber === currentStep) {
+        indicator.setAttribute("aria-current", "step");
+      } else {
+        indicator.removeAttribute("aria-current");
+      }
     });
 
     if (prevStepBtn) {
@@ -533,6 +549,19 @@
     if (appointmentTypeField) {
       appointmentTypeField.addEventListener("change", updateAppointmentLocationField);
     }
+
+    bookingForm.querySelectorAll("input, select, textarea").forEach(function (field) {
+      field.addEventListener("input", function () {
+        if (field.getAttribute("aria-invalid") === "true" && field.checkValidity()) {
+          setFieldError(field.name, "");
+        }
+      });
+      field.addEventListener("change", function () {
+        if (field.getAttribute("aria-invalid") === "true" && field.checkValidity()) {
+          setFieldError(field.name, "");
+        }
+      });
+    });
 
     if (nextStepBtn) {
       nextStepBtn.addEventListener("click", function () {

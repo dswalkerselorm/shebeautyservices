@@ -1222,6 +1222,24 @@ em {
   border-bottom: 1px solid var(--border-subtle);
 }
 
+.stepper-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background: rgba(200, 117, 88, 0.12);
+  pointer-events: none;
+}
+
+.stepper-progress span {
+  display: block;
+  width: calc((var(--current-step, 1) - 1) / 2 * 100%);
+  height: 100%;
+  background: var(--accent-gold);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .step {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
