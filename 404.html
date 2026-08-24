@@ -10,15 +10,20 @@
   <link rel="apple-touch-icon" href="shebeautyserviceslogo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="error-page">
-  <div class="page-shell">
-    <header class="site-header" id="siteHeader">
-      <div class="container nav-wrap">
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Floating Island Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="nav-island">
         <a class="brand" href="index.html" aria-label="SheBeautyServices home">
-          <img src="shebeautyserviceslogo.jpg" alt="SheBeautyServices logo" class="brand-logo">
+          <div class="brand-logo-shell">
+            <img src="shebeautyserviceslogo.jpg" alt="SheBeautyServices logo" class="brand-logo">
+          </div>
           <span class="brand-text">SheBeautyServices</span>
         </a>
 
@@ -28,45 +33,63 @@
 
         <nav class="nav-links" id="siteNav" aria-label="Main navigation">
           <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="booking.html" class="btn btn-small nav-cta">Book Now</a>
+          <a href="services.html">Services &amp; Gallery</a>
+          <a href="booking.html" class="btn btn-small nav-cta">
+            <span>Book Now</span>
+            <div class="btn-icon-bubble" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
         </nav>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="section-space error-section">
-        <div class="container" data-reveal>
-          <p class="eyebrow">Page not found</p>
-          <h1>404</h1>
-          <p class="lead">The page you're looking for doesn't exist or has been moved.</p>
-          <div class="actions" style="justify-content: center;">
-            <a class="btn" href="index.html">Back to Home</a>
-            <a class="btn btn-ghost" href="services.html">View Services</a>
+  <main>
+    <section class="section-space" style="min-height:85vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+      <div class="container" data-reveal>
+        <div class="bezel-shell" style="max-width:620px; margin-inline:auto;">
+          <div class="bezel-core" style="padding:5rem 2.5rem;">
+            <span class="eyebrow eyebrow-pill">Sanctuary Missing</span>
+            <h1 class="serif-title" style="font-size:clamp(4rem, 8vw, 7rem); color:var(--accent-gold-light); margin:1rem 0;">404</h1>
+            <p class="lead" style="margin:0 auto 2.5rem;">The requested page could not be located in our atelier collection.</p>
+            <div class="actions" style="display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap;">
+              <a class="btn" href="index.html">
+                <span>Return to Home</span>
+                <div class="btn-icon-bubble" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+              </a>
+              <a class="btn btn-ghost" href="services.html">
+                <span>Browse Gallery</span>
+              </a>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <a class="footer-brand" href="index.html" aria-label="SheBeautyServices home">
-          <img src="shebeautyserviceslogo.jpg" alt="" width="36" height="36" class="footer-logo">
-          <span>SheBeautyServices</span>
-        </a>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="booking.html">Book Now</a>
-        </nav>
-        <p class="footer-copy">&copy; <span data-year></span> SheBeautyServices. All rights reserved.</p>
       </div>
-    </footer>
-  </div>
+    </section>
+  </main>
 
-  <a class="mobile-booking-cta" href="booking.html">Book now</a>
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top" hidden>&uarr;</button>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html" aria-label="SheBeautyServices home">
+        <div class="brand-logo-shell" style="width:36px;height:36px;">
+          <img src="shebeautyserviceslogo.jpg" alt="" class="brand-logo">
+        </div>
+        <span>SheBeautyServices</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services &amp; Gallery</a>
+        <a href="booking.html">Book Now</a>
+      </nav>
+      <p class="footer-copy">&copy; <span data-year></span> SheBeautyServices. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">&uarr;</button>
 
   <script src="script.js"></script>
 </body>
 </html>
+

@@ -3,30 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SheBeautyServices | Booking</title>
-  <meta name="description" content="Book your SheBeautyServices appointment for home service or travel.">
+  <title>SheBeautyServices | Book Your Appointment</title>
+  <meta name="description" content="Reserve your bespoke beauty appointment with SheBeautyServices for studio, home service, or destination travel.">
   <meta property="og:title" content="SheBeautyServices | Book Your Appointment">
   <meta property="og:description" content="Book your SheBeautyServices appointment for home service or travel.">
-  <meta property="og:image" content="backgroundimage.jpg">
+  <meta property="og:image" content="makeup2.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SheBeautyServices | Book Your Appointment">
   <meta name="twitter:description" content="Book your SheBeautyServices appointment for home service or travel.">
-  <meta name="twitter:image" content="backgroundimage.jpg">
+  <meta name="twitter:image" content="makeup2.jpg">
   <link rel="icon" type="image/jpeg" href="shebeautyserviceslogo.jpg">
   <link rel="shortcut icon" type="image/jpeg" href="shebeautyserviceslogo.jpg">
   <link rel="apple-touch-icon" href="shebeautyserviceslogo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="booking-page">
-  <div class="page-shell">
-    <header class="site-header" id="siteHeader">
-      <div class="container nav-wrap">
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Floating Island Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="nav-island">
         <a class="brand" href="index.html" aria-label="SheBeautyServices home">
-          <img src="shebeautyserviceslogo.jpg" alt="SheBeautyServices logo" class="brand-logo">
+          <div class="brand-logo-shell">
+            <img src="shebeautyserviceslogo.jpg" alt="SheBeautyServices logo" class="brand-logo">
+          </div>
           <span class="brand-text">SheBeautyServices</span>
         </a>
 
@@ -36,169 +41,213 @@
 
         <nav class="nav-links" id="siteNav" aria-label="Main navigation">
           <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="booking.html" class="btn btn-small nav-cta is-active">Book Now</a>
+          <a href="services.html">Services &amp; Gallery</a>
+          <a href="booking.html" class="btn btn-small nav-cta is-active">
+            <span>Book Now</span>
+            <div class="btn-icon-bubble" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
         </nav>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="section-space page-intro booking-intro">
-        <div class="container booking-intro-grid">
-          <div>
-            <p class="eyebrow" data-reveal>Personalised booking</p>
-            <p class="hero-collection" data-reveal>Your moment begins here</p>
-            <h1 data-reveal>Reserve time for <em>you.</em></h1>
-            <p class="lead" data-reveal>
-              Tell us what you have in mind. We’ll confirm the details and create an appointment that fits beautifully into your day.
-            </p>
-          </div>
-          <div class="booking-intro-detail" data-reveal>
-            <span>01</span>
-            <p>Share your details</p>
-            <span>02</span>
-            <p>Choose your appointment</p>
-            <span>03</span>
-            <p>We’ll confirm your request</p>
-          </div>
+  <main>
+    <!-- Booking Page Intro -->
+    <section class="section-space" style="padding-top:10rem; padding-bottom:4rem;">
+      <div class="container services-intro-grid">
+        <div>
+          <span class="eyebrow eyebrow-pill" data-reveal>Concierge Reservation</span>
+          <h1 class="serif-title" data-reveal>Reserve time for <em>you.</em></h1>
+          <p class="lead" data-reveal>
+            Share your preferred date and service requests. Our team will verify artist availability and curate a flawless session.
+          </p>
         </div>
-      </section>
+        <aside class="bezel-shell services-badge-card" data-reveal>
+          <div class="bezel-core">
+            <span class="bento-num" style="color:var(--accent-gold); font-size:2.4rem;">03</span>
+            <p class="serif-title" style="font-size:1.25rem; font-style:italic; color:var(--accent-champagne);">"Simple, thoughtful steps toward your transformation."</p>
+            <small style="text-transform:uppercase; letter-spacing:0.18em; color:var(--accent-gold); font-size:0.75rem;">Fast Availability Verification</small>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-      <section class="section-space">
-        <div class="container booking-grid">
-          <article class="booking-form-card glass depth-high" data-reveal>
+    <!-- Interactive Step Wizard Form -->
+    <section class="section-space" style="padding-top:2rem; padding-bottom:7rem;">
+      <div class="container booking-grid">
+        <div class="bezel-shell booking-form-card" data-reveal>
+          <div class="bezel-core">
             <div class="stepper" aria-label="Booking progress">
-              <span class="stepper-progress" aria-hidden="true"><span></span></span>
-              <span class="step is-current" data-step-indicator="1">1. Contact</span>
+              <span class="step is-current" data-step-indicator="1">1. Contact Details</span>
               <span class="step" data-step-indicator="2">2. Appointment</span>
-              <span class="step" data-step-indicator="3">3. Confirm</span>
+              <span class="step" data-step-indicator="3">3. Review &amp; Send</span>
             </div>
 
             <form id="bookingForm" class="booking-form">
+              <!-- Step 1: Contact -->
               <section class="form-step is-current" data-step="1">
-                <p class="form-step-intro">Start with the best way to reach you.</p>
+                <p class="form-step-intro">How can our concierge team reach you?</p>
+                
                 <label for="fullName">Full Name</label>
-                <input id="fullName" name="fullName" type="text" autocomplete="name" required>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="e.g. Alexandra Sterling" required>
                 <p class="field-error" id="fullNameError" data-error-for="fullName"></p>
 
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" minlength="7" required>
+                <label for="phone">Phone Number (WhatsApp / Calls)</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. +1 555 234 5678" minlength="7" required>
                 <p class="field-error" id="phoneError" data-error-for="phone"></p>
               </section>
 
+              <!-- Step 2: Appointment Details -->
               <section class="form-step" data-step="2">
-                <p class="form-step-intro">Choose the service and setting that suit your day.</p>
-                <label for="service">Service</label>
+                <p class="form-step-intro">Tailor your service and setting.</p>
+                
+                <label for="service">Service Category</label>
                 <select id="service" name="service" required>
-                  <option value="">Select a service</option>
-                  <option>Hair</option>
-                  <option>Nails</option>
-                  <option>Lashes</option>
-                  <option>Makeup</option>
+                  <option value="">Select a discipline</option>
+                  <option>Hair Sculpting &amp; Styling</option>
+                  <option>Couture Nails</option>
+                  <option>Bespoke Lashes</option>
+                  <option>Artistry Makeup</option>
                 </select>
                 <p class="field-error" id="serviceError" data-error-for="service"></p>
 
-                <label for="appointmentDate">Appointment Date</label>
-                <input id="appointmentDate" name="appointmentDate" type="date" required>
-                <p class="field-error" id="appointmentDateError" data-error-for="appointmentDate"></p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;">
+                  <div>
+                    <label for="appointmentDate">Preferred Date</label>
+                    <input id="appointmentDate" name="appointmentDate" type="date" required>
+                    <p class="field-error" id="appointmentDateError" data-error-for="appointmentDate"></p>
+                  </div>
+                  <div>
+                    <label for="appointmentTime">Preferred Time</label>
+                    <input id="appointmentTime" name="appointmentTime" type="time" required>
+                    <p class="field-error" id="appointmentTimeError" data-error-for="appointmentTime"></p>
+                  </div>
+                </div>
 
-                <label for="appointmentTime">Preferred Time</label>
-                <input id="appointmentTime" name="appointmentTime" type="time" required>
-                <p class="field-error" id="appointmentTimeError" data-error-for="appointmentTime"></p>
-
-                <label for="appointmentType">Appointment Type</label>
+                <label for="appointmentType">Setting / Location Type</label>
                 <select id="appointmentType" name="appointmentType" required>
-                  <option value="">Select appointment type</option>
+                  <option value="">Select location setting</option>
                   <option>Shop Appointment</option>
                   <option>Home Service</option>
                   <option>Travel</option>
                 </select>
                 <p class="field-error" id="appointmentTypeError" data-error-for="appointmentType"></p>
-                <p class="appointment-type-note" id="appointmentTypeNote" aria-live="polite">Choose the setting that works best for you.</p>
+                <p class="appointment-type-note" id="appointmentTypeNote" aria-live="polite">Choose where you would prefer to be serviced.</p>
 
                 <div id="appointmentLocationGroup">
-                  <label for="appointmentLocation">Appointment Location</label>
-                  <textarea id="appointmentLocation" name="appointmentLocation" rows="3" required placeholder="Enter your address or preferred meeting location"></textarea>
+                  <label for="appointmentLocation">Service Address / Destination</label>
+                  <textarea id="appointmentLocation" name="appointmentLocation" rows="3" required placeholder="Enter full address or venue name"></textarea>
                   <p class="field-error" id="appointmentLocationError" data-error-for="appointmentLocation"></p>
                 </div>
               </section>
 
+              <!-- Step 3: Confirmation -->
               <section class="form-step" data-step="3">
-                <p class="form-step-intro">Check the details, then send your request for confirmation.</p>
-                <label for="notes">Notes (Optional)</label>
-                <textarea id="notes" name="notes" rows="4" placeholder="Add location details or special requests"></textarea>
-                <p class="field-note">Any special requests, address notes, or timing preferences.</p>
+                <p class="form-step-intro">Review your reservation details before sending.</p>
+                
+                <label for="notes">Special Requests or Notes (Optional)</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Specify look references, bridal party details, skin sensitivities, or timing requirements"></textarea>
+                <p class="field-note">Our lead artist will review these notes prior to confirmation.</p>
 
                 <article class="review-card" id="bookingReview">
-                  <h3>Review your details</h3>
-                  <p><strong>Name:</strong> <span data-review="fullName">-</span></p>
+                  <h3>Reservation Summary</h3>
+                  <p><strong>Full Name:</strong> <span data-review="fullName">-</span></p>
                   <p><strong>Phone:</strong> <span data-review="phone">-</span></p>
                   <p><strong>Service:</strong> <span data-review="service">-</span></p>
                   <p><strong>Date:</strong> <span data-review="appointmentDate">-</span></p>
                   <p><strong>Time:</strong> <span data-review="appointmentTime">-</span></p>
-                  <p><strong>Type:</strong> <span data-review="appointmentType">-</span></p>
+                  <p><strong>Setting:</strong> <span data-review="appointmentType">-</span></p>
                   <p><strong>Location:</strong> <span data-review="appointmentLocation">-</span></p>
                 </article>
               </section>
 
               <div class="wizard-actions">
-                <button type="button" class="btn btn-ghost" id="prevStepBtn">Back</button>
-                <button type="button" class="btn" id="nextStepBtn">Next</button>
-                <button type="submit" class="btn" id="submitBookingBtn">Submit Booking Request</button>
+                <button type="button" class="btn btn-ghost" id="prevStepBtn" style="display:none;">
+                  <span>Back</span>
+                </button>
+                <button type="button" class="btn" id="nextStepBtn">
+                  <span>Continue</span>
+                  <div class="btn-icon-bubble" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </button>
+                <button type="submit" class="btn" id="submitBookingBtn" style="display:none;">
+                  <span>Confirm &amp; Send Request</span>
+                  <div class="btn-icon-bubble" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </button>
               </div>
 
               <p id="formMessage" class="form-message" aria-live="polite"></p>
             </form>
 
             <article class="success-card" id="successCard" hidden>
-              <h2>Booking request sent</h2>
+              <h2 class="serif-title">Booking Request Sent</h2>
               <p id="successMessage"></p>
-              <div class="actions">
-                <a class="btn" href="index.html">Back to Home</a>
-                <a class="btn btn-ghost" href="services.html">Browse Services</a>
+              <div class="actions" style="display:flex; justify-content:center; gap:1.5rem;">
+                <a class="btn" href="index.html">
+                  <span>Return to Home</span>
+                  <div class="btn-icon-bubble" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </a>
+                <a class="btn btn-ghost" href="services.html">
+                  <span>Browse Gallery</span>
+                </a>
               </div>
             </article>
-          </article>
-
-          <aside class="booking-side-card glass depth-mid" data-reveal>
-            <p class="eyebrow">The SheBeauty promise</p>
-            <h3>Your time is treated with care.</h3>
-            <p class="booking-side-intro">A considered, comfortable experience from your request to your final touch.</p>
-            <ul class="check-list">
-              <li>Fast appointment confirmation</li>
-              <li>Professional and punctual service</li>
-              <li>Home service and travel flexibility</li>
-              <li>Quality products and hygiene standards</li>
-            </ul>
-            <div class="booking-side-note">
-              <span aria-hidden="true"><svg class="sparkle-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"></path></svg></span>
-              <p>Complete the form in a few simple steps. We’ll follow up to confirm availability.</p>
-            </div>
-          </aside>
+          </div>
         </div>
-      </section>
-    </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <a class="footer-brand" href="index.html" aria-label="SheBeautyServices home">
-          <img src="shebeautyserviceslogo.jpg" alt="" width="36" height="36" class="footer-logo">
-          <span>SheBeautyServices</span>
-        </a>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="booking.html">Book Now</a>
-        </nav>
-        <p class="footer-copy">&copy; <span data-year></span> SheBeautyServices. All rights reserved.</p>
+        <!-- Sidebar Info -->
+        <aside class="bezel-shell booking-side-card" data-reveal>
+          <div class="bezel-core">
+            <span class="eyebrow eyebrow-pill">The SheBeauty Promise</span>
+            <h3 class="serif-title" style="font-size:2rem; margin-top:1rem;">Your time and privacy, treated with reverence.</h3>
+            <p class="lead" style="font-size:0.95rem; margin:1.25rem 0;">A bespoke, serene experience crafted from your initial message to the final reveal.</p>
+            
+            <ul class="check-list">
+              <li>Priority scheduling response within 2 hours</li>
+              <li>Punctual, fully equipped mobile kit</li>
+              <li>Sterile, hospital-grade tools &amp; luxury cosmetics</li>
+              <li>Complete privacy and discrete service</li>
+            </ul>
+
+            <div class="booking-side-note">
+              <span aria-hidden="true">✦</span>
+              <p>For custom bridal parties or commercial editorial bookings, submit this request and our lead artist will connect directly.</p>
+            </div>
+          </div>
+        </aside>
       </div>
-    </footer>
-  </div>
+    </section>
+  </main>
 
-  <a class="mobile-booking-cta" href="#bookingForm">Book now</a>
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top" hidden>&uarr;</button>
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html" aria-label="SheBeautyServices home">
+        <div class="brand-logo-shell" style="width:36px;height:36px;">
+          <img src="shebeautyserviceslogo.jpg" alt="" class="brand-logo">
+        </div>
+        <span>SheBeautyServices</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services &amp; Gallery</a>
+        <a href="booking.html">Book Now</a>
+      </nav>
+      <p class="footer-copy">&copy; <span data-year></span> SheBeautyServices. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">&uarr;</button>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+

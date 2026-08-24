@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SheBeautyServices | Services</title>
-  <meta name="description" content="Explore SheBeautyServices portfolio with makeup videos, photos and premium beauty services.">
+  <title>SheBeautyServices | Services &amp; Portfolio</title>
+  <meta name="description" content="Explore the SheBeautyServices portfolio featuring video artistry reels, editorial makeup transformations, and bespoke services.">
   <meta property="og:title" content="SheBeautyServices | Services &amp; Portfolio">
   <meta property="og:description" content="Explore SheBeautyServices portfolio with makeup videos, photos and premium beauty services.">
   <meta property="og:image" content="makeup2.jpg">
@@ -18,16 +18,21 @@
   <link rel="apple-touch-icon" href="shebeautyserviceslogo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" href="makeup3.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="services-page">
-  <div class="page-shell">
-    <header class="site-header" id="siteHeader">
-      <div class="container nav-wrap">
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Floating Island Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="nav-island">
         <a class="brand" href="index.html" aria-label="SheBeautyServices home">
-          <img src="shebeautyserviceslogo.jpg" alt="SheBeautyServices logo" class="brand-logo">
+          <div class="brand-logo-shell">
+            <img src="shebeautyserviceslogo.jpg" alt="SheBeautyServices logo" class="brand-logo">
+          </div>
           <span class="brand-text">SheBeautyServices</span>
         </a>
 
@@ -37,272 +42,342 @@
 
         <nav class="nav-links" id="siteNav" aria-label="Main navigation">
           <a href="index.html">Home</a>
-          <a href="services.html" class="is-active">Services</a>
-          <a href="booking.html" class="btn btn-small nav-cta">Book Now</a>
+          <a href="services.html" class="is-active">Services &amp; Gallery</a>
+          <a href="booking.html" class="btn btn-small nav-cta">
+            <span>Book Now</span>
+            <div class="btn-icon-bubble" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
         </nav>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="section-space page-intro services-intro">
-        <div class="container services-intro-grid">
-          <div>
-            <p class="eyebrow" data-reveal>Premium care, considered</p>
-            <p class="hero-collection" data-reveal>Our signature offerings</p>
-            <h1 data-reveal>Find the finish that feels like <em>you.</em></h1>
-            <p class="lead" data-reveal>
-              Thoughtful beauty services for everyday confidence, elevated events,
-              and every moment in between.
-            </p>
-          </div>
-          <aside class="services-intro-aside glass depth-mid" data-reveal>
+  <main>
+    <!-- Services Page Intro -->
+    <section class="section-space" style="padding-top:10rem; padding-bottom:4rem;">
+      <div class="container services-intro-grid">
+        <div>
+          <span class="eyebrow eyebrow-pill" data-reveal>The Atelier Menu</span>
+          <h1 class="serif-title" data-reveal>Find the finish that feels like <em>you.</em></h1>
+          <p class="lead" data-reveal>
+            Thoughtful beauty artistry tailored for high-profile galas, weddings, editorial campaigns, or everyday confidence.
+          </p>
+        </div>
+        <aside class="bezel-shell services-badge-card" data-reveal>
+          <div class="bezel-core">
             <img src="shebeautyserviceslogo.jpg" alt="SheBeautyServices logo" class="services-aside-logo">
-            <p>Created with care. Finished with confidence.</p>
-            <span class="services-aside-line" aria-hidden="true"></span>
-            <small>SheBeautyServices</small>
-          </aside>
-        </div>
-      </section>
+            <p class="serif-title" style="font-size:1.25rem; font-style:italic; color:var(--accent-champagne);">"Created with care. Finished with quiet confidence."</p>
+            <small style="text-transform:uppercase; letter-spacing:0.18em; color:var(--accent-gold); font-size:0.75rem;">SheBeautyServices Atelier</small>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-      <section class="section-space services-offers-section">
-        <div class="container">
-          <div class="section-heading services-heading" data-reveal>
-            <div>
-              <p class="eyebrow">The service menu</p>
-              <h2>Tailored artistry, from the first detail to the final touch.</h2>
+    <!-- Services Bento Grid -->
+    <section class="section-space" style="padding-top:2rem; padding-bottom:5rem;">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div>
+            <span class="eyebrow eyebrow-pill">Master Offerings</span>
+            <h2 class="serif-title">Tailored artistry across four disciplines.</h2>
+          </div>
+          <p class="lead" style="max-width:38ch;">Every treatment uses professional-grade cosmetics and sterile tools.</p>
+        </div>
+
+        <div class="services-bento-grid">
+          <!-- Hair Bento -->
+          <article class="bento-card-hair" data-reveal>
+            <div class="bezel-shell bento-service-card">
+              <div class="bezel-core">
+                <div class="bento-top-row">
+                  <span class="bento-num">01</span>
+                  <div class="bento-icon-box">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.47" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                  </div>
+                </div>
+                <div class="bento-content-bottom">
+                  <h3 class="serif-title">Hair Sculpting &amp; Treatments</h3>
+                  <p>Silk presses, protective braiding, bespoke updos, and deep moisture therapy for natural and relaxed textures.</p>
+                  <a class="bento-arrow-link" href="booking.html">Book service &rarr;</a>
+                </div>
+              </div>
             </div>
-            <p>Choose a service designed around your style, occasion and comfort.</p>
-          </div>
-          <div class="service-grid service-offer-grid">
-            <article class="service-offer glass depth-mid" data-reveal>
-              <div class="service-offer-top">
-                <span>01</span>
-                <svg class="service-icon-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.47" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line>
-                </svg>
-              </div>
-              <h3>Hair</h3>
-              <p>Styling, braiding and treatment options for everyday and special events.</p>
-              <span class="service-offer-note">Style, care &amp; confidence</span>
-            </article>
-            <article class="service-offer glass depth-mid" data-reveal>
-              <div class="service-offer-top">
-                <span>02</span>
-                <svg class="service-icon-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.8-3.7 5.3-.8L12 2z"></path>
-                </svg>
-              </div>
-              <h3>Nails</h3>
-              <p>Clean manicures, polished finishes, and lasting elegance for every mood.</p>
-              <span class="service-offer-note">Polished to perfection</span>
-            </article>
-            <article class="service-offer glass depth-mid" data-reveal>
-              <div class="service-offer-top">
-                <span>03</span>
-                <svg class="service-icon-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle><path d="M12 5V2M6.5 6.5L4 4M17.5 6.5L20 4"></path>
-                </svg>
-              </div>
-              <h3>Lashes</h3>
-              <p>Classic and volume lash sets designed for soft or bold beauty looks.</p>
-              <span class="service-offer-note">Soft or statement-making</span>
-            </article>
-            <article class="service-offer glass depth-mid" data-reveal>
-              <div class="service-offer-top">
-                <span>04</span>
-                <svg class="service-icon-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M15 4l5 5"></path><path d="M13 6l-9.5 9.5a2.828 2.828 0 1 0 4 4L17 10"></path><path d="M20 14.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"></path>
-                </svg>
-              </div>
-              <h3>Makeup</h3>
-              <p>Bridal, glam and event-ready makeup tailored to your features and tone.</p>
-              <span class="service-offer-note">Radiance, tailored to you</span>
-            </article>
-          </div>
-        </div>
-      </section>
+          </article>
 
-      <section class="section-space showcase-section">
-        <div class="container">
-          <div class="showcase-header" data-reveal>
-            <div>
-              <p class="eyebrow">Makeup Showcase</p>
-              <h2>Work Samples</h2>
+          <!-- Makeup Bento -->
+          <article class="bento-card-makeup" data-reveal>
+            <div class="bezel-shell bento-service-card">
+              <div class="bezel-core">
+                <div class="bento-top-row">
+                  <span class="bento-num">02</span>
+                  <div class="bento-icon-box">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 4l5 5"/><path d="M13 6l-9.5 9.5a2.828 2.828 0 1 0 4 4L17 10"/><path d="M20 14.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></svg>
+                  </div>
+                </div>
+                <div class="bento-content-bottom">
+                  <h3 class="serif-title">Editorial &amp; Bridal Makeup</h3>
+                  <p>Skin-focused velvet glow, waterproof bridal glam, high-fashion contouring, and camera-ready pigment finishes.</p>
+                  <a class="bento-arrow-link" href="booking.html">Book service &rarr;</a>
+                </div>
+              </div>
             </div>
-            <p class="showcase-subtitle">A curated look at our signature makeup artistry and transformations.</p>
-          </div>
+          </article>
 
-          <div class="portfolio-tabs" aria-label="Portfolio categories" data-reveal>
-            <button type="button" class="portfolio-tab is-active" aria-current="page">Makeup</button>
-            <button type="button" class="portfolio-tab" disabled>Hair <span>Coming soon</span></button>
-            <button type="button" class="portfolio-tab" disabled>Nails <span>Coming soon</span></button>
-            <button type="button" class="portfolio-tab" disabled>Lashes <span>Coming soon</span></button>
-          </div>
-
-          <div class="showcase-gallery">
-            <!-- Featured Video 1 -->
-            <figure class="showcase-card showcase-video-card glass" data-media-card data-src="makeup.mp4" data-kind="video" data-caption="Signature Full Glam Transformation" data-reveal>
-              <div class="card-media-wrapper">
-                <span class="media-badge">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                  Artistry Reel
-                </span>
-                <video muted loop playsinline preload="metadata" poster="makeup2.jpg" class="showcase-video-el" aria-label="Makeup transformation video">
-                  <source src="makeup.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay-gradient"></div>
-                <div class="video-action-bar">
-                  <button type="button" class="video-ctrl-btn toggle-sound-btn" aria-label="Toggle Sound" title="Toggle Sound">
-                    <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-                    <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                  </button>
-                  <button type="button" class="video-ctrl-btn expand-lightbox-btn" aria-label="Full screen view" title="Expand View">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                  </button>
+          <!-- Lashes Bento -->
+          <article class="bento-card-lashes" data-reveal>
+            <div class="bezel-shell bento-service-card">
+              <div class="bezel-core">
+                <div class="bento-top-row">
+                  <span class="bento-num">03</span>
+                  <div class="bento-icon-box">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><path d="M12 5V2M6.5 6.5L4 4M17.5 6.5L20 4"/></svg>
+                  </div>
                 </div>
-                <div class="video-center-indicator" aria-hidden="true">
-                  <div class="play-pulse-ring"></div>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-                <div class="video-progress-track">
-                  <div class="video-progress-fill"></div>
+                <div class="bento-content-bottom">
+                  <h3 class="serif-title">Bespoke Lash Extension Sets</h3>
+                  <p>Individual classic lashes, hybrid textures, and mega-volume mappings tailored to your eye morphology.</p>
+                  <a class="bento-arrow-link" href="booking.html">Book service &rarr;</a>
                 </div>
               </div>
-              <figcaption class="showcase-caption">
-                <div class="caption-header">
-                  <strong>Signature Full Glam Transformation</strong>
-                  <span class="caption-tag">Bridal &amp; Red Carpet</span>
-                </div>
-                <p>Complete sculpt, radiant luminous complexion, and statement eye artistry created for luxury occasions.</p>
-              </figcaption>
-            </figure>
+            </div>
+          </article>
 
-            <!-- Featured Video 2 -->
-            <figure class="showcase-card showcase-video-card glass" data-media-card data-src="makeup1.mp4" data-kind="video" data-caption="Editorial Radiance &amp; Glow Process" data-reveal>
-              <div class="card-media-wrapper">
-                <span class="media-badge">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                  Artistry Reel
-                </span>
-                <video muted loop playsinline preload="metadata" poster="makeup3.jpg" class="showcase-video-el" aria-label="Event-ready glam process video">
-                  <source src="makeup1.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay-gradient"></div>
-                <div class="video-action-bar">
-                  <button type="button" class="video-ctrl-btn toggle-sound-btn" aria-label="Toggle Sound" title="Toggle Sound">
-                    <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-                    <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                  </button>
-                  <button type="button" class="video-ctrl-btn expand-lightbox-btn" aria-label="Full screen view" title="Expand View">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                  </button>
+          <!-- Nails Bento -->
+          <article class="bento-card-nails" data-reveal>
+            <div class="bezel-shell bento-service-card">
+              <div class="bezel-core">
+                <div class="bento-top-row">
+                  <span class="bento-num">04</span>
+                  <div class="bento-icon-box">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.8-3.7 5.3-.8L12 2z"/></svg>
+                  </div>
                 </div>
-                <div class="video-center-indicator" aria-hidden="true">
-                  <div class="play-pulse-ring"></div>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-                <div class="video-progress-track">
-                  <div class="video-progress-fill"></div>
+                <div class="bento-content-bottom">
+                  <h3 class="serif-title">Architectural Gel Nails</h3>
+                  <p>Aesthetic Russian-style cuticle care, structured BIAB builder overlays, French gradients, and custom nail art.</p>
+                  <a class="bento-arrow-link" href="booking.html">Book service &rarr;</a>
                 </div>
               </div>
-              <figcaption class="showcase-caption">
-                <div class="caption-header">
-                  <strong>Editorial Radiance &amp; Glow Process</strong>
-                  <span class="caption-tag">Skin-Focused Glow</span>
-                </div>
-                <p>Seamless skin blending, warm bronze contouring, and a camera-ready, velvety dewy finish.</p>
-              </figcaption>
-            </figure>
-
-            <!-- Featured Photo 1 -->
-            <figure class="showcase-card showcase-photo-card glass" data-media-card tabindex="0" role="button" aria-label="Open Flawless soft glam finish image" data-src="makeup2.jpg" data-kind="image" data-caption="Flawless Soft Glam Finish" data-reveal>
-              <div class="card-media-wrapper">
-                <span class="media-badge media-badge-photo">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                  Still Artistry
-                </span>
-                <img src="makeup2.jpg" loading="lazy" decoding="async" alt="Client makeup look by SheBeautyServices">
-                <div class="video-overlay-gradient"></div>
-                <div class="photo-expand-cue">
-                  <span>View High-Res</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </div>
-              </div>
-              <figcaption class="showcase-caption">
-                <div class="caption-header">
-                  <strong>Flawless Soft Glam Finish</strong>
-                  <span class="caption-tag">Soft Glam</span>
-                </div>
-                <p>Natural tones with delicate sculpting and softly defined lashes for understated luxury.</p>
-              </figcaption>
-            </figure>
-
-            <!-- Featured Photo 2 -->
-            <figure class="showcase-card showcase-photo-card glass" data-media-card tabindex="0" role="button" aria-label="Open Radiant full glam result image" data-src="makeup3.jpg" data-kind="image" data-caption="Radiant Full Glam Result" data-reveal>
-              <div class="card-media-wrapper">
-                <span class="media-badge media-badge-photo">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                  Still Artistry
-                </span>
-                <img src="makeup3.jpg" loading="lazy" decoding="async" alt="Professional makeup artistry result">
-                <div class="video-overlay-gradient"></div>
-                <div class="photo-expand-cue">
-                  <span>View High-Res</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </div>
-              </div>
-              <figcaption class="showcase-caption">
-                <div class="caption-header">
-                  <strong>Radiant Full Glam Result</strong>
-                  <span class="caption-tag">Signature Night</span>
-                </div>
-                <p>Bold yet balanced look tailored to complement the client’s unique features and event attire.</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-space">
-        <div class="container">
-          <article class="cta-banner services-booking-cta glass depth-high" data-reveal>
-            <p class="eyebrow">Your appointment awaits</p>
-            <h2>Ready for your next beautiful moment?</h2>
-            <p class="lead">Book your personalised beauty appointment and let us take care of every detail.</p>
-            <div class="actions">
-              <a class="btn" href="booking.html">Book Now</a>
-              <a class="btn btn-ghost" href="index.html">Back to Home</a>
             </div>
           </article>
         </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <a class="footer-brand" href="index.html" aria-label="SheBeautyServices home">
-          <img src="shebeautyserviceslogo.jpg" alt="" width="36" height="36" class="footer-logo">
-          <span>SheBeautyServices</span>
-        </a>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="booking.html">Book Now</a>
-        </nav>
-        <p class="footer-copy">&copy; <span data-year></span> SheBeautyServices. All rights reserved.</p>
       </div>
-    </footer>
-  </div>
+    </section>
 
+    <!-- Interactive Media Showcase Gallery (Videos & High-Res Photos) -->
+    <section class="section-space">
+      <div class="container">
+        <div class="showcase-header" data-reveal>
+          <div>
+            <span class="eyebrow eyebrow-pill">Living Portfolio</span>
+            <h2 class="serif-title">Work Samples &amp; Artistry Reels</h2>
+          </div>
+          <p class="lead" style="max-width:40ch;">High-definition process reels and still captures from recent client appointments.</p>
+        </div>
+
+        <div class="portfolio-tabs" aria-label="Portfolio filters" data-reveal>
+          <button type="button" class="portfolio-tab is-active">Makeup &amp; Glow</button>
+          <button type="button" class="portfolio-tab" disabled>Hair <span>Archiving</span></button>
+          <button type="button" class="portfolio-tab" disabled>Nails <span>Archiving</span></button>
+          <button type="button" class="portfolio-tab" disabled>Lashes <span>Archiving</span></button>
+        </div>
+
+        <div class="showcase-gallery">
+          <!-- Video Card 1 -->
+          <article class="showcase-card showcase-video-card" data-media-card data-src="makeup.mp4" data-kind="video" data-caption="Signature Full Glam Transformation" data-reveal>
+            <div class="bezel-shell">
+              <div class="bezel-core">
+                <div class="card-media-wrapper">
+                  <span class="media-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Artistry Reel
+                  </span>
+                  <video muted loop playsinline preload="metadata" poster="makeup2.jpg" class="showcase-video-el" aria-label="Makeup transformation video">
+                    <source src="makeup.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-overlay-gradient"></div>
+                  <div class="video-action-bar">
+                    <button type="button" class="video-ctrl-btn toggle-sound-btn" aria-label="Toggle Sound" title="Toggle Sound">
+                      <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                      <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    </button>
+                    <button type="button" class="video-ctrl-btn expand-lightbox-btn" aria-label="Full screen view" title="Expand View">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <div class="video-center-indicator" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                  <div class="video-progress-track">
+                    <div class="video-progress-fill"></div>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="caption-header">
+                    <strong>Signature Full Glam Transformation</strong>
+                    <span class="caption-tag">Bridal &amp; Gala</span>
+                  </div>
+                  <p>Complete contour sculpt, luminous silk complexion, and dramatic eye framing crafted for luxury evening events.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Video Card 2 -->
+          <article class="showcase-card showcase-video-card" data-media-card data-src="makeup1.mp4" data-kind="video" data-caption="Editorial Radiance &amp; Glow Process" data-reveal>
+            <div class="bezel-shell">
+              <div class="bezel-core">
+                <div class="card-media-wrapper">
+                  <span class="media-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Artistry Reel
+                  </span>
+                  <video muted loop playsinline preload="metadata" poster="makeup3.jpg" class="showcase-video-el" aria-label="Event-ready glam process video">
+                    <source src="makeup1.mp4" type="video/mp4">
+                  </video>
+                  <div class="video-overlay-gradient"></div>
+                  <div class="video-action-bar">
+                    <button type="button" class="video-ctrl-btn toggle-sound-btn" aria-label="Toggle Sound" title="Toggle Sound">
+                      <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                      <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    </button>
+                    <button type="button" class="video-ctrl-btn expand-lightbox-btn" aria-label="Full screen view" title="Expand View">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <div class="video-center-indicator" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                  <div class="video-progress-track">
+                    <div class="video-progress-fill"></div>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="caption-header">
+                    <strong>Editorial Radiance &amp; Velvet Skin</strong>
+                    <span class="caption-tag">Skin Philosophy</span>
+                  </div>
+                  <p>Seamless tone matching, bronzed glow transitions, and a velvet dewy finish that moves naturally under flash lighting.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo Card 1 -->
+          <article class="showcase-card showcase-photo-card" data-media-card tabindex="0" role="button" aria-label="Open Flawless soft glam finish image" data-src="makeup2.jpg" data-kind="image" data-caption="Flawless Soft Glam Finish" data-reveal>
+            <div class="bezel-shell">
+              <div class="bezel-core">
+                <div class="card-media-wrapper">
+                  <span class="media-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Still Capture
+                  </span>
+                  <img src="makeup2.jpg" loading="lazy" decoding="async" alt="Client makeup look by SheBeautyServices">
+                  <div class="video-overlay-gradient"></div>
+                  <div class="photo-expand-cue">
+                    <span>High-Res View</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="caption-header">
+                    <strong>Flawless Soft Glam Finish</strong>
+                    <span class="caption-tag">Soft Glam</span>
+                  </div>
+                  <p>Subtle sculpting with soft brown hues, feathery brows, and softly layered lashes for refined minimalism.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo Card 2 -->
+          <article class="showcase-card showcase-photo-card" data-media-card tabindex="0" role="button" aria-label="Open Radiant full glam result image" data-src="makeup3.jpg" data-kind="image" data-caption="Radiant Full Glam Result" data-reveal>
+            <div class="bezel-shell">
+              <div class="bezel-core">
+                <div class="card-media-wrapper">
+                  <span class="media-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Still Capture
+                  </span>
+                  <img src="makeup3.jpg" loading="lazy" decoding="async" alt="Professional makeup artistry result">
+                  <div class="video-overlay-gradient"></div>
+                  <div class="photo-expand-cue">
+                    <span>High-Res View</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  </div>
+                </div>
+                <div class="showcase-caption">
+                  <div class="caption-header">
+                    <strong>Radiant Full Glam Result</strong>
+                    <span class="caption-tag">Red Carpet</span>
+                  </div>
+                  <p>Bold lip contouring paired with luminous gold highlights, calibrated strictly to match evening gown aesthetic.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation CTA Banner -->
+    <section class="section-space">
+      <div class="container">
+        <div class="bezel-shell reservation-banner" data-reveal>
+          <div class="bezel-core">
+            <span class="eyebrow eyebrow-pill">Private Bookings</span>
+            <h2 class="serif-title">Ready for your transformation?</h2>
+            <p class="lead">Book your personalised beauty consultation and allow us to attend to every requirement.</p>
+            <div class="actions">
+              <a class="btn" href="booking.html">
+                <span>Book Appointment</span>
+                <div class="btn-icon-bubble" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+              </a>
+              <a class="btn btn-ghost" href="index.html">
+                <span>Return to Home</span>
+                <div class="btn-icon-bubble" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption" hidden>
     <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close viewer">&times;</button>
     <div class="lightbox-body" id="lightboxBody"></div>
     <p class="lightbox-caption" id="lightboxCaption"></p>
   </div>
 
-  <a class="mobile-booking-cta" href="booking.html">Book now</a>
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top" hidden>&uarr;</button>
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html" aria-label="SheBeautyServices home">
+        <div class="brand-logo-shell" style="width:36px;height:36px;">
+          <img src="shebeautyserviceslogo.jpg" alt="" class="brand-logo">
+        </div>
+        <span>SheBeautyServices</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services &amp; Gallery</a>
+        <a href="booking.html">Book Now</a>
+      </nav>
+      <p class="footer-copy">&copy; <span data-year></span> SheBeautyServices. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">&uarr;</button>
 
   <script src="script.js"></script>
 </body>
 </html>
+
