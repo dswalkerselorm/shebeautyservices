@@ -248,15 +248,17 @@
 
   portfolioTabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
-      if (tab.disabled) return;
       portfolioTabs.forEach(function (t) { t.classList.remove("is-active"); });
       tab.classList.add("is-active");
 
-      var category = tab.textContent.trim().toLowerCase();
+      var filter = tab.getAttribute("data-filter") || "all";
       showcaseCards.forEach(function (card) {
-        if (category.includes("all") || category.includes("makeup")) {
+        var cardCategory = card.getAttribute("data-category") || "makeup";
+        if (filter === "all" || cardCategory === filter) {
           card.style.display = "";
           card.classList.add("is-visible");
+        } else {
+          card.style.display = "none";
         }
       });
     });

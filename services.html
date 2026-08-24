@@ -178,15 +178,16 @@
         </div>
 
         <div class="portfolio-tabs" aria-label="Portfolio filters" data-reveal>
-          <button type="button" class="portfolio-tab is-active">Makeup &amp; Glow</button>
-          <button type="button" class="portfolio-tab" disabled>Hair <span>Archiving</span></button>
-          <button type="button" class="portfolio-tab" disabled>Nails <span>Archiving</span></button>
-          <button type="button" class="portfolio-tab" disabled>Lashes <span>Archiving</span></button>
+          <button type="button" class="portfolio-tab is-active" data-filter="all">All Disciplines</button>
+          <button type="button" class="portfolio-tab" data-filter="makeup">Artistry Makeup</button>
+          <button type="button" class="portfolio-tab" data-filter="hair">Hair Sculpting</button>
+          <button type="button" class="portfolio-tab" data-filter="nails">Couture Nails</button>
+          <button type="button" class="portfolio-tab" data-filter="lashes">Bespoke Lashes</button>
         </div>
 
         <div class="showcase-gallery">
-          <!-- Video Card 1 -->
-          <article class="showcase-card showcase-video-card" data-media-card data-src="makeup.mp4" data-kind="video" data-caption="Signature Full Glam Transformation" data-reveal>
+          <!-- Video Card 1: Makeup -->
+          <article class="showcase-card showcase-video-card" data-category="makeup" data-media-card data-src="makeup.mp4" data-kind="video" data-caption="Signature Full Glam Transformation" data-reveal>
             <div class="bezel-shell">
               <div class="bezel-core">
                 <div class="card-media-wrapper">
@@ -225,14 +226,14 @@
             </div>
           </article>
 
-          <!-- Video Card 2 -->
-          <article class="showcase-card showcase-video-card" data-media-card data-src="makeup1.mp4" data-kind="video" data-caption="Editorial Radiance &amp; Glow Process" data-reveal>
+          <!-- Video Card 2: Hair & Editorial Glow -->
+          <article class="showcase-card showcase-video-card" data-category="hair" data-media-card data-src="makeup1.mp4" data-kind="video" data-caption="Silk Press &amp; Editorial Glow Finish" data-reveal>
             <div class="bezel-shell">
               <div class="bezel-core">
                 <div class="card-media-wrapper">
                   <span class="media-badge">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    Artistry Reel
+                    Hair &amp; Glow Reel
                   </span>
                   <video muted loop playsinline preload="metadata" poster="makeup3.jpg" class="showcase-video-el" aria-label="Event-ready glam process video">
                     <source src="makeup1.mp4" type="video/mp4">
@@ -256,25 +257,25 @@
                 </div>
                 <div class="showcase-caption">
                   <div class="caption-header">
-                    <strong>Editorial Radiance &amp; Velvet Skin</strong>
-                    <span class="caption-tag">Skin Philosophy</span>
+                    <strong>Silk Press &amp; Editorial Glow</strong>
+                    <span class="caption-tag">Hair &amp; Finish</span>
                   </div>
-                  <p>Seamless tone matching, bronzed glow transitions, and a velvet dewy finish that moves naturally under flash lighting.</p>
+                  <p>Weightless thermal straightening, healthy shine therapy, and harmonious contour balancing for special occasions.</p>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Photo Card 1 -->
-          <article class="showcase-card showcase-photo-card" data-media-card tabindex="0" role="button" aria-label="Open Flawless soft glam finish image" data-src="makeup2.jpg" data-kind="image" data-caption="Flawless Soft Glam Finish" data-reveal>
+          <!-- Photo Card 1: Lashes & Soft Glam -->
+          <article class="showcase-card showcase-photo-card" data-category="lashes" data-media-card tabindex="0" role="button" aria-label="Open Flawless soft glam finish image" data-src="makeup2.jpg" data-kind="image" data-caption="Bespoke Russian Volume Lash Set" data-reveal>
             <div class="bezel-shell">
               <div class="bezel-core">
                 <div class="card-media-wrapper">
                   <span class="media-badge">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                    Still Capture
+                    Lash Artistry
                   </span>
-                  <img src="makeup2.jpg" loading="lazy" decoding="async" alt="Client makeup look by SheBeautyServices">
+                  <img src="makeup2.jpg" loading="lazy" decoding="async" alt="Client lash and makeup look by SheBeautyServices">
                   <div class="video-overlay-gradient"></div>
                   <div class="photo-expand-cue">
                     <span>High-Res View</span>
@@ -283,25 +284,25 @@
                 </div>
                 <div class="showcase-caption">
                   <div class="caption-header">
-                    <strong>Flawless Soft Glam Finish</strong>
-                    <span class="caption-tag">Soft Glam</span>
+                    <strong>Bespoke Russian Volume Lash Set</strong>
+                    <span class="caption-tag">Lashes</span>
                   </div>
-                  <p>Subtle sculpting with soft brown hues, feathery brows, and softly layered lashes for refined minimalism.</p>
+                  <p>Layered wispy fibers mapped to elongate the eye shape without excessive weight on the natural lash bed.</p>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Photo Card 2 -->
-          <article class="showcase-card showcase-photo-card" data-media-card tabindex="0" role="button" aria-label="Open Radiant full glam result image" data-src="makeup3.jpg" data-kind="image" data-caption="Radiant Full Glam Result" data-reveal>
+          <!-- Photo Card 2: Nails & Red Carpet Glam -->
+          <article class="showcase-card showcase-photo-card" data-category="nails" data-media-card tabindex="0" role="button" aria-label="Open Radiant full glam result image" data-src="makeup3.jpg" data-kind="image" data-caption="Architectural BIAB Gel &amp; Editorial Glow" data-reveal>
             <div class="bezel-shell">
               <div class="bezel-core">
                 <div class="card-media-wrapper">
                   <span class="media-badge">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                    Still Capture
+                    Nails &amp; Glam
                   </span>
-                  <img src="makeup3.jpg" loading="lazy" decoding="async" alt="Professional makeup artistry result">
+                  <img src="makeup3.jpg" loading="lazy" decoding="async" alt="Professional beauty result">
                   <div class="video-overlay-gradient"></div>
                   <div class="photo-expand-cue">
                     <span>High-Res View</span>
@@ -310,10 +311,10 @@
                 </div>
                 <div class="showcase-caption">
                   <div class="caption-header">
-                    <strong>Radiant Full Glam Result</strong>
-                    <span class="caption-tag">Red Carpet</span>
+                    <strong>Architectural BIAB Gel &amp; Glow</strong>
+                    <span class="caption-tag">Nails &amp; Glam</span>
                   </div>
-                  <p>Bold lip contouring paired with luminous gold highlights, calibrated strictly to match evening gown aesthetic.</p>
+                  <p>Precision almond nail architecture with structured builder gel and high-gloss mirror finish to complement evening styling.</p>
                 </div>
               </div>
             </div>
