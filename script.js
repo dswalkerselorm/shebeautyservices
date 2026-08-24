@@ -8,6 +8,132 @@
     el.textContent = new Date().getFullYear();
   });
 
+  // ── Ambient Interactive Spotlight ──
+  var ambientSpotlight = document.getElementById("ambientSpotlight");
+  if (ambientSpotlight && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    var mouseX = window.innerWidth / 2;
+    var mouseY = window.innerHeight / 2;
+    var currentX = mouseX;
+    var currentY = mouseY;
+
+    window.addEventListener("mousemove", function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, { passive: true });
+
+    function renderSpotlight() {
+      currentX += (mouseX - currentX) * 0.1;
+      currentY += (mouseY - currentY) * 0.1;
+      ambientSpotlight.style.transform = "translate3d(" + currentX + "px, " + currentY + "px, 0)";
+      requestAnimationFrame(renderSpotlight);
+    }
+    renderSpotlight();
+  }
+
+  // ── Interactive Before & After Transformation Slider ──
+  var compareContainer = document.getElementById("compareContainer");
+  var compareBeforeImg = document.getElementById("compareBeforeImg");
+  var compareSliderBar = document.getElementById("compareSliderBar");
+
+  if (compareContainer && compareBeforeImg && compareSliderBar) {
+    var isDragging = false;
+
+    function setSliderPosition(x) {
+      var rect = compareContainer.getBoundingClientRect();
+      var offsetX = Math.max(0, Math.min(x - rect.left, rect.width));
+      var pct = (offsetX / rect.width) * 100;
+      
+      compareBeforeImg.style.clipPath = "polygon(0 0, " + pct + "% 0, " + pct + "% 100%, 0 100%)";
+      compareSliderBar.style.left = pct + "%";
+    }
+
+    function onPointerDown(e) {
+      isDragging = true;
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      setSliderPosition(clientX);
+    }
+
+    function onPointerMove(e) {
+      if (!isDragging) return;
+      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      setSliderPosition(clientX);
+    }
+
+    function onPointerUp() {
+      isDragging = false;
+    }
+
+    compareContainer.addEventListener("mousedown", onPointerDown);
+    window.addEventListener("mousemove", onPointerMove, { passive: true });
+    window.addEventListener("mouseup", onPointerUp);
+
+    compareContainer.addEventListener("touchstart", onPointerDown, { passive: true });
+    window.addEventListener("touchmove", onPointerMove, { passive: true });
+    window.addEventListener("touchend", onPointerUp);
+  }
+
+  // ── 3D Magnetic Physics on Bento Cards ──
+  var bentoCards = document.querySelectorAll(".bento-service-card");
+  if (bentoCards.length > 0 && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    bentoCards.forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
+        var rotateX = ((y - centerY) / centerY) * -7;
+        var rotateY = ((x - centerX) / centerX) * 7;
+
+        card.style.transform = "perspective(1000px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateZ(12px)";
+      });
+
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+      });
+    });
+  }
+
+  // ── GSAP ScrollTrigger Orchestration ──
+  if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero visual parallax
+    gsap.to(".hero-main-card", {
+      y: -30,
+      scrollTrigger: {
+        trigger: ".home-hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1.2
+      }
+    });
+
+    // Scrubber Word-by-Word Reveal on Narrative Section
+    var scrubTarget = document.getElementById("philosophyScrub");
+    if (scrubTarget) {
+      var text = scrubTarget.textContent.trim();
+      var words = text.split(/\s+/);
+      scrubTarget.innerHTML = words.map(function (w) { return "<span>" + w + "</span>"; }).join(" ");
+      var wordSpans = scrubTarget.querySelectorAll("span");
+
+      gsap.fromTo(wordSpans, {
+        opacity: 0.15,
+        color: "#57534e"
+      }, {
+        opacity: 1,
+        color: "#faeee4",
+        stagger: 0.04,
+        scrollTrigger: {
+          trigger: scrubTarget,
+          start: "top 80%",
+          end: "bottom 45%",
+          scrub: 1
+        }
+      });
+    }
+  }
+
   // ── Header & Scroll ──
   var header = document.getElementById("siteHeader");
   var scrollTopBtn = document.getElementById("scrollTopBtn");
