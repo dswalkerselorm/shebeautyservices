@@ -242,6 +242,26 @@
     revealElements.forEach(function (element) { element.classList.add("is-visible"); });
   }
 
+  // ── Portfolio Category Filtering ──
+  var portfolioTabs = document.querySelectorAll(".portfolio-tab");
+  var showcaseCards = document.querySelectorAll(".showcase-card");
+
+  portfolioTabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      if (tab.disabled) return;
+      portfolioTabs.forEach(function (t) { t.classList.remove("is-active"); });
+      tab.classList.add("is-active");
+
+      var category = tab.textContent.trim().toLowerCase();
+      showcaseCards.forEach(function (card) {
+        if (category.includes("all") || category.includes("makeup")) {
+          card.style.display = "";
+          card.classList.add("is-visible");
+        }
+      });
+    });
+  });
+
   // ── Video Autoplay & Reel Player Controls ──
   var showcaseVideoCards = document.querySelectorAll(".showcase-video-card");
 
